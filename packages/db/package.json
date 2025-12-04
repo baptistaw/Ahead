@@ -1,0 +1,36 @@
+{
+  "name": "@ahead/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/client.ts --format esm --dts",
+    "dev": "tsup src/index.ts src/client.ts --format esm --dts --watch",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "push": "drizzle-kit push",
+    "studio": "drizzle-kit studio",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ahead/shared": "workspace:*",
+    "drizzle-orm": "^0.37.0",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "drizzle-kit": "^0.30.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}
