@@ -10,8 +10,9 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@ahead/shared": "workspace:*",
     "@ahead/db": "workspace:*",
+    "@ahead/shared": "workspace:*",
+    "@clerk/localizations": "^3.29.0",
     "@clerk/nextjs": "^6.9.0",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-avatar": "^1.1.2",
@@ -49,6 +50,7 @@
     "eslint-config-next": "15.1.2",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.7.2"
   }
 }
