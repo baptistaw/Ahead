@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -34,15 +35,22 @@ export function Sidebar() {
 
   return (
     <aside className="flex h-full w-64 flex-col bg-ahead-primary text-white">
-      {/* Logo */}
-      <div className="flex h-16 items-center justify-center border-b border-white/10">
-        <Link href="/dashboard" className="flex items-center gap-2">
-          <span className="text-2xl font-bold">AHEAD</span>
+      {/* Logo horizontal completo */}
+      <div className="flex h-20 items-center justify-center border-b border-white/10 px-4">
+        <Link href="/dashboard" className="flex items-center">
+          <Image
+            src="/images/logo-horizontal.jpeg"
+            alt="AHEAD - Clínica Integral de Optimización Quirúrgica"
+            width={200}
+            height={50}
+            className="h-12 w-auto object-contain"
+            priority
+          />
         </Link>
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 p-4">
+      <nav className="flex-1 space-y-1 overflow-y-auto p-4">
         {navigation.map((item) => {
           const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
           return (
@@ -56,7 +64,7 @@ export function Sidebar() {
                   : 'text-white/70 hover:bg-white/10 hover:text-white'
               )}
             >
-              <item.icon className="h-5 w-5" />
+              <item.icon className="h-5 w-5 shrink-0" />
               {item.name}
             </Link>
           );
@@ -66,9 +74,7 @@ export function Sidebar() {
       {/* Footer */}
       <div className="border-t border-white/10 p-4">
         <p className="text-center text-xs text-white/50">
-          AHEAD v0.1.0
-          <br />
-          Prehabilitación Quirúrgica
+          Un paso adelante de la cirugía
         </p>
       </div>
     </aside>

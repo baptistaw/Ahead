@@ -9,19 +9,32 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // Tipografías del Manual de Marca
+        sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+      },
       colors: {
-        // AHEAD brand colors
+        // AHEAD brand colors (from Manual de Marca)
         ahead: {
-          primary: '#1E3A5F', // Deep blue - trust, professionalism
-          secondary: '#2E7D32', // Green - health, growth
-          accent: '#FF6B35', // Coral - energy, warmth
-          light: '#F5F7FA', // Light gray background
-          dark: '#1A1A2E', // Dark mode background
+          // Azul AHEAD (color principal) - HEX: #0F3C5D
+          primary: '#0F3C5D',
+          // Verde Quirúrgico Suave - HEX: #2D9F8A
+          secondary: '#2D9F8A',
+          // Coral Progreso (color de acento) - HEX: #F26B4F
+          accent: '#F26B4F',
+          // Gris Claro Fondo - HEX: #F5F7FA
+          light: '#F5F7FA',
+          // Gris Texto - HEX: #3C4A57
+          text: '#3C4A57',
+          // Gris Intermedio - HEX: #B7C0CC
+          muted: '#B7C0CC',
         },
-        // Semáforo colors
+        // Semáforo colors (clinical traffic light)
         semaforo: {
           verde: '#22C55E',
-          ambar: '#EAB308',
+          ambar: '#F59E0B',
           rojo: '#EF4444',
         },
         // Shadcn theme
